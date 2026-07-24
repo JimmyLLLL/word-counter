@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0b0f">
+    <meta name="description" content="Free word counter — count words, characters, sentences, paragraphs, and reading time instantly. Live word count as you type. No download, works in your browser.">
+    <meta name="keywords" content="word counter, character counter, word count, count words online, text analyzer, reading time calculator">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jimmyllll.github.io/word-counter/">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1840337371416691" crossorigin="anonymous"></script>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Word Counter">
+    <meta property="og:title" content="Word Counter — Free Online Word & Character Count Tool">
+    <meta property="og:description" content="Count words, characters, sentences, paragraphs, and reading time instantly. Free, live, no download.">
+    <meta property="og:url" content="https://jimmyllll.github.io/word-counter/">
+    <meta property="og:image" content="https://jimmyllll.github.io/word-counter/favicon.svg">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Word Counter — Free Online Word & Character Count">
+    <meta name="twitter:description" content="Count words, characters, sentences, and reading time instantly.">
+    <title>Word Counter — Free Online Word & Character Count Tool</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"Word Counter","url":"https://jimmyllll.github.io/word-counter/","description":"Free online word counter. Count words, characters, sentences, paragraphs, and reading time instantly.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"How does the word counter work?","acceptedAnswer":{"@type":"Answer","text":"Simply type or paste your text into the text area. The word counter updates live as you type, counting words, characters, sentences, and paragraphs."}},
+        {"@type":"Question","name":"Is this word counter free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free. No signup, no download, no limits."}},
+        {"@type":"Question","name":"How is reading time calculated?","acceptedAnswer":{"@type":"Answer","text":"Reading time is calculated at an average speed of 200 words per minute, which is the average reading speed for adults."}},
+        {"@type":"Question","name":"Does it count characters with or without spaces?","acceptedAnswer":{"@type":"Answer","text":"Both! The tool shows total characters and characters without spaces separately."}}
+    ]}
+    </script>
+</head>
+<body>
+<nav class="navbar">
+    <a class="brand" href="index.html">📝 Word Counter</a>
+    <div class="nav-links">
+        <a href="index.html" class="active">Count</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+<main>
+    <h1>Word Counter</h1>
+    <p class="subtitle">Count words, characters, sentences, paragraphs, and reading time — live as you type.</p>
+
+    <textarea id="textInput" placeholder="Type or paste your text here..." aria-label="Text to analyze"></textarea>
+
+    <div class="btn-row">
+        <button class="btn btn-secondary" onclick="copyText()">📋 Copy Text</button>
+        <button class="btn btn-secondary" onclick="clearText()">🗑️ Clear</button>
+        <button class="btn btn-secondary" onclick="loadSample()">📄 Load Sample</button>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card"><div class="stat-num" id="wordCount">0</div><div class="stat-label">Words</div></div>
+        <div class="stat-card"><div class="stat-num" id="charCount">0</div><div class="stat-label">Characters</div></div>
+        <div class="stat-card green"><div class="stat-num" id="charNoSpace">0</div><div class="stat-label">No Spaces</div></div>
+        <div class="stat-card gold"><div class="stat-num" id="sentenceCount">0</div><div class="stat-label">Sentences</div></div>
+        <div class="stat-card"><div class="stat-num" id="paraCount">0</div><div class="stat-label">Paragraphs</div></div>
+        <div class="stat-card green"><div class="stat-num" id="lineCount">0</div><div class="stat-label">Lines</div></div>
+    </div>
+
+    <div class="reading-time">
+        ⏱️ Reading time: <strong id="readTime">0 sec</strong> &nbsp;|&nbsp;
+        🗣️ Speaking time: <strong id="speakTime">0 sec</strong>
+    </div>
+
+    <div class="tool-card" id="keywordCard" style="display:none;">
+        <h2 style="margin-top:0">📊 Top Keywords</h2>
+        <div class="keyword-density" id="keywordList"></div>
+    </div>
+
+    <div class="stats-footer">
+        👁️ Views <strong id="pv">-</strong><span class="stat-divider">|</span>👤 Visitors <strong id="uv">-</strong>
+    </div>
+
+    <div class="seo-section">
+        <h2>Free Online Word Counter</h2>
+        <p>Our free word counter is a powerful tool for writers, students, bloggers, and professionals. Simply type or paste your text, and the tool instantly counts words, characters, sentences, paragraphs, and lines. It also calculates estimated reading and speaking time.</p>
+        <h2>Features</h2>
+        <ul>
+            <li><strong>Live word count</strong> — Updates in real-time as you type</li>
+            <li><strong>Character count</strong> — Total characters and characters without spaces</li>
+            <li><strong>Sentence &amp; paragraph count</strong> — Automatically detected</li>
+            <li><strong>Line count</strong> — Count lines in your text</li>
+            <li><strong>Reading time</strong> — Estimated at 200 words per minute</li>
+            <li><strong>Speaking time</strong> — Estimated at 130 words per minute</li>
+            <li><strong>Keyword density</strong> — See your most-used words</li>
+            <li><strong>Copy &amp; clear</strong> — Quick text management</li>
+            <li><strong>100% free</strong> — No signup, no limits, no download</li>
+            <li><strong>Privacy</strong> — All processing happens in your browser</li>
+        </ul>
+        <h2>Who Uses a Word Counter?</h2>
+        <ul>
+            <li><strong>Students</strong> — Meet essay word count requirements</li>
+            <li><strong>Writers &amp; bloggers</strong> — Stay within article length guidelines</li>
+            <li><strong>SEO professionals</strong> — Optimize meta descriptions and title tags</li>
+            <li><strong>Social media managers</strong> — Stay within Twitter/X, Instagram, and Facebook limits</li>
+            <li><strong>Translators</strong> — Track word count for pricing</li>
+            <li><strong>Lawyers</strong> — Meet document length requirements</li>
+            <li><strong>Journlists</strong> — Write to specific word counts</li>
+        </ul>
+        <h2>Word Count Limits for Popular Platforms</h2>
+        <ul>
+            <li><strong>Twitter/X post</strong> — 280 characters</li>
+            <li><strong>Facebook post</strong> — 63,206 characters</li>
+            <li><strong>Instagram caption</strong> — 2,200 characters</li>
+            <li><strong>SEO meta description</strong> — 155-160 characters</li>
+            <li><strong>SEO title tag</strong> — 55-60 characters</li>
+            <li><strong>LinkedIn post</strong> — 3,000 characters</li>
+            <li><strong>YouTube description</strong> — 5,000 characters</li>
+        </ul>
+        <h2>How Reading Time Is Calculated</h2>
+        <p>Reading time is estimated at 200 words per minute, the average silent reading speed for adults. Speaking time is estimated at 130 words per minute, the average speaking rate for presentations. These are estimates — actual times vary by content complexity and reader.</p>
+        <h2>How Sentences and Paragraphs Are Counted</h2>
+        <p>Sentences are counted by detecting sentence-ending punctuation (periods, exclamation marks, question marks). Paragraphs are counted by detecting double line breaks. Lines are counted by detecting single line breaks.</p>
+    </div>
+</main>
+<footer>
+    <p><a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="contact.html">Contact</a> · <a href="https://github.com/JimmyLLLL/word-counter">GitHub</a></p>
+    <p style="margin-top:0.4rem;">Word Counter © 2026 · Free online word count tool</p>
+    <div style="margin-top:0.6rem;font-size:0.72rem;opacity:0.6;">More: <a href="https://jimmyllll.github.io/quick-tools/">QuickTools</a> · <a href="https://jimmyllll.github.io/web-tools/">WebTools</a> · <a href="https://jimmyllll.github.io/game-2048/">2048</a> · <a href="https://jimmyllll.github.io/bmi-calculator/">BMI Calculator</a></div>
+</footer>
+<script src="js/counter.js"></script>
+<script>
+const textInput = document.getElementById("textInput");
+
+function count() {
+    const text = textInput.value;
+
+    // Words
+    const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+    // Characters
+    const chars = text.length;
+    const charsNoSpace = text.replace(/\s/g, "").length;
+    // Sentences
+    const sentences = text.trim() ? (text.match(/[^.!?]+[.!?]+/g) || []).length + (text.trim().match(/[^.!?]+$/) ? 1 : 0) : 0;
+    // Paragraphs
+    const paragraphs = text.trim() ? text.trim().split(/\n\s*\n/).filter(p => p.trim()).length : 0;
+    // Lines
+    const lines = text ? text.split("\n").length : 0;
+
+    // Reading time (200 wpm)
+    const readSecs = Math.round((words / 200) * 60);
+    // Speaking time (130 wpm)
+    const speakSecs = Math.round((words / 130) * 60);
+
+    document.getElementById("wordCount").textContent = words.toLocaleString();
+    document.getElementById("charCount").textContent = chars.toLocaleString();
+    document.getElementById("charNoSpace").textContent = charsNoSpace.toLocaleString();
+    document.getElementById("sentenceCount").textContent = sentences.toLocaleString();
+    document.getElementById("paraCount").textContent = paragraphs.toLocaleString();
+    document.getElementById("lineCount").textContent = lines.toLocaleString();
+    document.getElementById("readTime").textContent = formatTime(readSecs);
+    document.getElementById("speakTime").textContent = formatTime(speakSecs);
+
+    // Keyword density
+    updateKeywords(text, words);
+}
+
+function formatTime(secs) {
+    if (secs < 60) return secs + " sec";
+    const mins = Math.floor(secs / 60);
+    const remSecs = secs % 60;
+    return remSecs > 0 ? mins + " min " + remSecs + " sec" : mins + " min";
+}
+
+function updateKeywords(text, totalWords) {
+    const kwCard = document.getElementById("keywordCard");
+    if (totalWords < 10) { kwCard.style.display = "none"; return; }
+
+    // Extract words, normalize
+    const stopWords = new Set(["the","a","an","and","or","but","in","on","at","to","for","of","with","by","from","is","are","was","were","be","been","being","have","has","had","do","does","did","will","would","could","should","may","might","must","can","this","that","these","those","i","you","he","she","it","we","they","them","their","his","her","its","our","your","my","me","him","us","as","if","then","than","so","not","no","yes","also","just","very","too","more","most","some","any","all","each","every","other","such","own","same","few","many","much","about","into","through","during","before","after","above","below","up","down","out","off","over","under","again","further","here","there","when","where","why","how","what","which","who","whom"]);
+    const words = text.toLowerCase().match(/\b[a-z]{2,}\b/g) || [];
+    const freq = {};
+    words.forEach(w => { if (!stopWords.has(w)) freq[w] = (freq[w] || 0) + 1; });
+
+    const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 10);
+    if (sorted.length === 0) { kwCard.style.display = "none"; return; }
+
+    kwCard.style.display = "block";
+    const maxCount = sorted[0][1];
+    document.getElementById("keywordList").innerHTML = sorted.map(([word, count]) => {
+        const pct = totalWords > 0 ? ((count / totalWords) * 100).toFixed(1) : 0;
+        const barWidth = (count / maxCount) * 100;
+        return `<div class="kw-item">
+            <span>${word}</span>
+            <span style="display:flex;align-items:center;gap:0.5rem;">
+                <span style="color:var(--text-dim);font-size:0.78rem;">${count}× (${pct}%)</span>
+                <span class="kw-bar"><span class="kw-bar-fill" style="width:${barWidth}%"></span></span>
+            </span>
+        </div>`;
+    }).join("");
+}
+
+function copyText() {
+    textInput.select();
+    navigator.clipboard.writeText(textInput.value).then(() => {
+        const btn = event.target;
+        const orig = btn.textContent;
+        btn.textContent = "✅ Copied!";
+        setTimeout(() => { btn.textContent = orig; }, 1500);
+    }).catch(() => {});
+}
+
+function clearText() {
+    textInput.value = "";
+    textInput.focus();
+    count();
+}
+
+function loadSample() {
+    textInput.value = "The quick brown fox jumps over the lazy dog. This is a sample text to demonstrate the word counter tool.\n\nIt has multiple paragraphs, several sentences, and enough words to show keyword density analysis. The tool counts everything in real-time as you type or paste text. Try editing this text or clearing it to start fresh!\n\nWord counters are essential tools for writers, students, and professionals who need to meet specific word count requirements.";
+    count();
+}
+
+textInput.addEventListener("input", count);
+count();
+</script>
+</body>
+</html>
