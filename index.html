@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="Count words, characters, sentences, and reading time instantly.">
     <meta name="twitter:image" content="https://jimmywithfiona.com/word-counter/favicon.svg">
     <title>Word Counter — Free Online Word & Character Count Tool</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="css/style.css"></noscript>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"WebApplication","name":"Word Counter","url":"https://jimmywithfiona.com/word-counter/","description":"Free online word counter. Count words, characters, sentences, paragraphs, and reading time instantly.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
     </script>
@@ -38,6 +38,8 @@
         {"@type":"Question","name":"Does it count characters with or without spaces?","acceptedAnswer":{"@type":"Answer","text":"Both! The tool shows total characters and characters without spaces separately."}}
     ]}
     </script>
+    <link rel="prefetch" href="/quick-tools/">
+    <link rel="prefetch" href="/web-tools/">
 </head>
 <body>
 <nav class="navbar">
@@ -131,7 +133,7 @@
     <p style="margin-top:0.4rem;">Word Counter © 2026 · Free online word count tool</p>
     <div style="margin-top:0.6rem;font-size:0.72rem;opacity:0.6;">More: <a href="https://jimmywithfiona.com/quick-tools/">QuickTools</a> · <a href="https://jimmywithfiona.com/web-tools/">WebTools</a> · <a href="https://jimmywithfiona.com/game-2048/">2048</a> · <a href="https://jimmywithfiona.com/bmi-calculator/">BMI Calculator</a></div>
 </footer>
-<script src="js/counter.js"></script>
+<script defer src="js/counter.js"></script>
 <script>
 const textInput = document.getElementById("textInput");
 
