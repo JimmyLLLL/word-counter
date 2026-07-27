@@ -61,7 +61,7 @@
     <textarea id="textInput" placeholder="Type or paste your text here..." aria-label="Text to analyze"></textarea>
 
     <div class="btn-row">
-        <button class="btn btn-secondary" onclick="copyText()">📋 Copy Text</button>
+            <button class="btn btn-secondary" onclick="copyText(this)">📋 Copy Text</button>
         <button class="btn btn-secondary" onclick="clearText()">🗑️ Clear</button>
         <button class="btn btn-secondary" onclick="loadSample()">📄 Load Sample</button>
     </div>
@@ -113,7 +113,7 @@
             <li><strong>Social media managers</strong> — Stay within Twitter/X, Instagram, and Facebook limits</li>
             <li><strong>Translators</strong> — Track word count for pricing</li>
             <li><strong>Lawyers</strong> — Meet document length requirements</li>
-            <li><strong>Journlists</strong> — Write to specific word counts</li>
+            <li><strong>Journalists</strong> — Write to specific word counts</li>
         </ul>
         <h2>Word Count Limits for Popular Platforms</h2>
         <ul>
@@ -208,10 +208,9 @@ function updateKeywords(text, totalWords) {
     }).join("");
 }
 
-function copyText() {
+function copyText(btn) {
     textInput.select();
     navigator.clipboard.writeText(textInput.value).then(() => {
-        const btn = event.target;
         const orig = btn.textContent;
         btn.textContent = "✅ Copied!";
         setTimeout(() => { btn.textContent = orig; }, 1500);
