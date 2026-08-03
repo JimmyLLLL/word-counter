@@ -73,5 +73,35 @@
 <footer><p>© 2026 Word Counter · <a href="index.html">Home</a> · <a href="https://github.com/JimmyLLLL/word-counter">GitHub</a></p><div style="margin-top:0.6rem;font-size:0.72rem;opacity:0.6;"><a href="https://jimmywithfiona.com/">JimmyWithFiona — Home</a></div>
 </footer>
 <script defer src="js/counter.js"></script>
+<!-- I18N-FULL -->
+<script>
+(function(){
+var lang=(navigator.language||navigator.userLanguage||'en').toLowerCase();
+if(!lang.startsWith('zh'))return;
+var ZH={"📝 Word Counter":"📝 字数统计器","Count":"计数","About":"关于","Privacy":"隐私","Contact":"联系","🏠 Home":"🏠 首页","About Word Counter":"关于字数统计器","Word Counter is a free online tool that counts words, characters, sentences, paragraphs, and lines in real-time. It also calculates reading and speaking time, and shows keyword density analysis.":"字数统计器是一款免费的在线工具，可实时统计字数、字符数、句子数、段落数和行数。它还能计算阅读和演讲时间，并显示关键词密度分析。","Features":"功能特点","Live word, character, sentence, paragraph, and line counting":"实时统计字数、字符数、句子数、段落数和行数","Reading time estimation (200 wpm)":"阅读时间估算（200 wpm）","Speaking time estimation (130 wpm)":"演讲时间估算（130 wpm）","Top 10 keyword density analysis":"前10关键词密度分析","Copy and clear text functions":"复制和清空文本功能","Works offline, no data sent to servers":"离线可用，不向服务器发送数据","All text processing happens locally in your browser. Your text is never sent to any server or stored anywhere.":"所有文本处理均在你的浏览器本地完成。你的文本绝不会发送到任何服务器或存储在任何地方。","Start Counting →":"开始计数 →","👁️ Views":"👁️ 浏览量","👤 Visitors":"👤 访客数","© 2026 Word Counter ·":"© 2026 字数统计器 ·","Home":"首页","JimmyWithFiona — Home":"JimmyWithFiona — 首页"};
+function walk(node){
+if(node.nodeType===3){
+var t=node.textContent,k=t.trim();
+if(k&&ZH[k]){node.textContent=t.replace(k,ZH[k])}
+}else if(node.nodeType===1&&node.tagName!=='SCRIPT'&&node.tagName!=='STYLE'&&node.tagName!=='NOSCRIPT'){
+if(node.childNodes.length>1){
+var full=node.textContent.trim();
+if(ZH[full]){node.textContent=ZH[full];return}
+}
+for(var i=0;i<node.childNodes.length;i++){walk(node.childNodes[i])}
+}
+}
+walk(document.body);
+document.documentElement.lang='zh-CN';
+var mo=new MutationObserver(function(muts){
+muts.forEach(function(m){
+if(m.type==='childList'){m.addedNodes.forEach(function(n){walk(n)})}
+else if(m.type==='characterData'){walk(m.target)}
+});
+});
+mo.observe(document.body,{childList:true,subtree:true,characterData:true});
+})();
+</script>
+<!-- /I18N-FULL -->
 </body>
 </html>
